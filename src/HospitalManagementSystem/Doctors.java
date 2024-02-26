@@ -44,9 +44,24 @@ public class Doctors {
         }
     }
 
+    public boolean getDoctorById(int id) {
+        String query = "SELECT * FROM doctors WHERE id= ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            } else {
+                return false;
+            }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
 
-
+    }
 
 
 
