@@ -6,5 +6,5 @@ public class Main {
         }catch (ClassNotFoundException e){
             System.out.println(e.getMessage());
  }
-}
+ }
 }
