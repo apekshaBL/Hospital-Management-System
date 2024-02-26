@@ -79,8 +79,8 @@ public class Patient {
 
         } catch (SQLException e) {
             e.printStackTrace();
-
         }
+        return false;
 
     }
 
