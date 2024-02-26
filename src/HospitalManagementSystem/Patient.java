@@ -62,7 +62,7 @@ public class Patient {
             e.printStackTrace();
 
         }
-
+        System.out.println("");
     }
 
 
