@@ -64,11 +64,11 @@ public class HospitalManagementSystem {
         }
     }
     public static void bookAppointment(Patient patient,Doctors doctor,Connection connection,Scanner scanner){
-        System.out.println("Enter patient id :");
+        System.out.print("Enter patient id :");
         int patientId=scanner.nextInt();
-        System.out.println("Enter doctor id :");
+        System.out.print("Enter doctor id :");
         int doctorId=scanner.nextInt();
-        System.out.println("Enter appointment date(YYYY -MM- DD):");
+        System.out.print("Enter appointment date(YYYY -MM- DD):");
         String appointmentDate=scanner.next();
         if(patient.getPatientById(patientId) && doctor.getDoctorById(doctorId)){
             if(checkDoctorAvailability(doctorId,appointmentDate,connection)){
