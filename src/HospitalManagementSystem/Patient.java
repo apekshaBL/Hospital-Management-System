@@ -15,11 +15,11 @@ public class Patient {
     }
 
     public void addPatient() {
-        System.out.println("Enter Patient Name: ");
+        System.out.print("Enter Patient Name: ");
         String name = scanner.next();
-        System.out.println("Enter patient Age: ");
+        System.out.print("Enter patient Age: ");
         int age = scanner.nextInt();
-        System.out.println("Enter patient gender: ");
+        System.out.print("Enter patient gender: ");
         String gender = scanner.next();
 
         try {
@@ -36,7 +36,7 @@ public class Patient {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); //print exception data
         }
     }
 
@@ -46,16 +46,16 @@ public class Patient {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Patients : ");
-            System.out.println("+------------+---------------------+-------------+---------------+");
-            System.out.println("| Patient Id | Name                |  Age        |  Gender        ");
-            System.out.println("+------------+---------------------+-------------+---------------+");
+            System.out.println("+------------+--------------------+----------+------------+");
+            System.out.println("| Patient Id | Name               |  Age     |  Gender    |");
+            System.out.println("+------------+--------------------+----------+------------+");
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 int age = resultSet.getInt("age");
                 String gender = resultSet.getString("gender");
-                System.out.printf("|%-12s|%-20s|%-13s|%-15s|\n" ,id,name,age,gender);
-                System.out.println("+------------+---------------------+-------------+---------------+");
+                System.out.printf("|%-12s|%-20s|%-10s|%-12s|\n" ,id,name,age,gender);
+                System.out.println("+------------+--------------------+----------+------------+");
             }
 
 
